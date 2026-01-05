@@ -1,1 +1,18 @@
-<p>departamentos works!</p>
+<h1 style="color:red">DEPARTAMENTOS FUNCIONANDO</h1>
+
+<table border="1" cellpadding="8">
+  <thead>
+    <tr>
+      <th>Nombre</th>
+      <th>Descripción</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr *ngFor="let d of departamentos">
+      <td>{{ d.nombre }}</td>
+      <td>{{ d.descripcion }}</td>
+    </tr>
+  </tbody>
+</table>
+ 
