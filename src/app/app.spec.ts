@@ -42,9 +42,9 @@ describe('App', () => {
     // Accede al HTML generado
     const compiled = fixture.nativeElement as HTMLElement;
 
-    // Busca un elemento <p1> y verifica su contenido
+    // Busca un elemento <h1> y verifica su contenido
     expect(
-      compiled.querySelector('p1')?.textContent
+      compiled.querySelector('h1')?.textContent
     ).toContain('Hello, frontend-empresa');
   });
 });

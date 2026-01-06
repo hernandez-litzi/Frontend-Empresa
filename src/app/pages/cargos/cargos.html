@@ -1,0 +1,18 @@
+<h1 style="color:red">Cargos Funcionando</h1>
+
+<table border="1" cellpadding="8">
+  <thead>
+    <tr>
+      <th>Nombre</th>
+      <th>Tipo de contrato</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr *ngFor="let d of cargos">
+      <td>{{ d.nombre }}</td>
+      <td>{{ d.tipo_contrato }}</td>
+    </tr>
+  </tbody>
+</table>
+ 

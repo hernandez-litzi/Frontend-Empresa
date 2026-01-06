@@ -1,0 +1,18 @@
+<h1 style="color:red">Empleados Funcionando</h1>
+
+<table border="1" cellpadding="8">
+  <thead>
+    <tr>
+      <th>Nombre</th>
+      <th>apellidos</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr *ngFor="let d of empleados">
+      <td>{{ d.nombre }}</td>
+      <td>{{ d.apellidos}}</td>
+    </tr>
+  </tbody>
+</table>
+ 
