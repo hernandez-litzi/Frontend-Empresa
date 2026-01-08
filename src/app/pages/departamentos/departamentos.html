@@ -1,18 +1,9 @@
-<h1 style="color:red">DEPARTAMENTOS FUNCIONANDO</h1>
+<h2>Departamentos</h2>
+<ul>
+<li *ngFor="let d of departamentos$ | async">
+  {{d.nombre}} 
+  {{d.descripcion}}
+</li>
 
-<table border="1" cellpadding="8">
-  <thead>
-    <tr>
-      <th>Nombre</th>
-      <th>Descripción</th>
-    </tr>
-  </thead>
+</ul>
 
-  <tbody>
-    <tr *ngFor="let d of departamentos">
-      <td>{{ d.nombre }}</td>
-      <td>{{ d.descripcion }}</td>
-    </tr>
-  </tbody>
-</table>
- 

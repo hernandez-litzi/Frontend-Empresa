@@ -1,24 +1,29 @@
-// Permite que esta clase sea inyectada en otros lugares
 import { Injectable } from '@angular/core';
-
-// Cliente HTTP de Angular para consumir APIs (GET, POST, PUT, DELETE)
 import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
+import { Depto } from '../pages/departamentos/depto';
+
 
 @Injectable({
-  // Hace que el servicio esté disponible en toda la aplicación
   providedIn: 'root'
 })
 export class DepartamentosService {
-
-  // URL del backend (NestJS) que devuelve los departamentos
   private apiUrl = 'http://localhost:3000/departamentos';
-
-  // Angular inyecta automáticamente HttpClient
   constructor(private http: HttpClient) {}
-
-  // Método para obtener los departamentos desde la API
-  getDepartamentos() {
-    // Realiza una petición GET y devuelve un Observable
-    return this.http.get(this.apiUrl);
+  getDepartamentos(){
+  return this.http.get<Depto[]>(this.apiUrl);
   }
+  crear(depto: Depto): Observable<Depto>{
+  return this.http.post<Depto>(this.apiUrl, depto);
+  }
+
+  actualizar(id: number, depto: Depto): Observable<Depto>{
+  return this.http.patch<Depto>(`${this.apiUrl}/${id}`, depto)
+  }
+
+  eliminar(id: number): Observable<void>{
+  return this.http.delete<void>(`${this.apiUrl}/${id}`)
+  }
+
 }
+

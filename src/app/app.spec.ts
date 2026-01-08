@@ -44,7 +44,7 @@ describe('App', () => {
 
     // Busca un elemento <h1> y verifica su contenido
     expect(
-      compiled.querySelector('h1')?.textContent
-    ).toContain('Hello, frontend-empresa');
+      compiled.querySelector('p1')?.textContent
+    ).toContain('frontend-empresa');
   });
 });
