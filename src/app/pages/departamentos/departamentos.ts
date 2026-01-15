@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component} from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { DepartamentosService } from '../../services/departamentos';
 import { Depto } from './depto';
@@ -11,7 +11,7 @@ import { Observable } from 'rxjs/internal/Observable';
 
   imports: [CommonModule],
 
-  templateUrl: './departamentos.html',
+  templateUrl: './departamentos.html'
 })
 
 export class Departamentos {

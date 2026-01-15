@@ -1,18 +1,7 @@
-<h1 style="color:red">Proyectos Funcionando</h1>
-
-<table border="1" cellpadding="8">
-  <thead>
-    <tr>
-      <th>Nombre</th>
-      <th>Descripción</th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <tr *ngFor="let d of proyectos">
-      <td>{{ d.nombre }}</td>
-      <td>{{ d.descripcion }}</td>
-    </tr>
-  </tbody>
-</table>
- 
+<h1 style="color: red">Proyectos Funcionando</h1>
+<ul>
+  <li *ngFor="let d of proyectos$ | async">
+    {{ d.nombre }}
+    {{ d.descripcion }}
+  </li>
+</ul>

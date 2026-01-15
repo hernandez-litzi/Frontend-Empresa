@@ -1,18 +1,9 @@
 <h1 style="color:red">Evaluaciones Funcionando</h1>
-
-<table border="1" cellpadding="8">
-  <thead>
-    <tr>
-      <th>Calificacion</th>
-      <th>Observaciones</th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <tr *ngFor="let d of evaluaciones">
-      <td>{{ d.calificaciones }}</td>
-      <td>{{ d.observaciones }}</td>
-    </tr>
-  </tbody>
-</table>
+<ul>
+     <li *ngFor="let d of evaluaciones$ | async">
+        {{ d.calificaciones }}
+        {{ d.observaciones }}
+     </li>
+</ul>
  
+

@@ -1,45 +1,23 @@
 <h1 class="text-2xl font-semibold mb-8">Empresa</h1>
 
 <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-6">
-  
-  <a 
-    routerLink="/departamentos"
-    class="flex flex-col items-center justify-center p-6 rounded-xl shadow hover:bg-gray-100 transition"
-  >
+  <app-button texto="Departamentos" ruta="/departamentos">
     <ion-icon name="business-outline" class="text-4xl text-blue-600 mb-2"></ion-icon>
-    <span class="text-sm font-medium">Departamentos</span>
-  </a>
+  </app-button>
 
-  <a
-    routerLink="/proyectos"
-    class="flex flex-col items-center justify-center p-6 rounded-xl shadow hover:bg-gray-100 transition"
-  >
-    <ion-icon name="briefcase-outline" class="text-4xl text-green-600 mb-2"></ion-icon>
-    <span class="text-sm font-medium">Proyectos</span>
-  </a>
+  <app-button texto="Proyectos" ruta="/proyectos">
+    <ion-icon name="briefcase-outline" class="text-4xl text-pink-600 mb-2"></ion-icon>
+  </app-button>
 
-  <a
-    routerLink="/empleados"
-    class="flex flex-col items-center justify-center p-6 rounded-xl shadow hover:bg-gray-100 transition"
-  >
+  <app-button texto="Empleados" ruta="/empleados">
     <ion-icon name="people-outline" class="text-4xl text-purple-600 mb-2"></ion-icon>
-    <span class="text-sm font-medium">Empleados</span>
-  </a>
+  </app-button>
 
-  <a
-    routerLink="/cargos"
-    class="flex flex-col items-center justify-center p-6 rounded-xl shadow hover:bg-gray-100 transition"
-  >
+  <app-button texto="Cargos" ruta="/cargos">
     <ion-icon name="id-card-outline" class="text-4xl text-orange-600 mb-2"></ion-icon>
-    <span class="text-sm font-medium">Cargos</span>
-  </a>
+  </app-button>
 
-  <a
-    routerLink="/evaluaciones"
-    class="flex flex-col items-center justify-center p-6 rounded-xl shadow hover:bg-gray-100 transition"
-  >
+  <app-button texto="Evaluaciones" ruta="/evaluaciones">
     <ion-icon name="clipboard-outline" class="text-4xl text-red-600 mb-2"></ion-icon>
-    <span class="text-sm font-medium">Evaluaciones</span>
-  </a>
+  </app-button>
 </div>
-

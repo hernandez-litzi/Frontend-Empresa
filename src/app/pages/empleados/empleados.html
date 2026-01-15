@@ -1,18 +1,9 @@
-<h1 style="color:red">Empleados Funcionando</h1>
+<h2>Empleados</h2>
+<ul>
+<li *ngFor="let d of empleados$ | async">
+  {{d.nombre}} 
+  {{d.apellidos}}
+</li>
 
-<table border="1" cellpadding="8">
-  <thead>
-    <tr>
-      <th>Nombre</th>
-      <th>apellidos</th>
-    </tr>
-  </thead>
+</ul>
 
-  <tbody>
-    <tr *ngFor="let d of empleados">
-      <td>{{ d.nombre }}</td>
-      <td>{{ d.apellidos}}</td>
-    </tr>
-  </tbody>
-</table>
- 

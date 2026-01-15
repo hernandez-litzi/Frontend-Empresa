@@ -1,6 +1,8 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { ProyectosService } from '../../services/proyectos';
+import { Observable } from 'rxjs';
+import { Proyec } from './proyec';
 
 @Component({
   selector: 'app-proyectos',
@@ -9,18 +11,10 @@ import { ProyectosService } from '../../services/proyectos';
   templateUrl: './proyectos.html',
   styleUrl: './proyectos.css',
 })
-export class Proyectos implements OnInit{
-  proyectos: any[] = [];
-  
-  constructor(private proyectosService: ProyectosService){
-  console.log('Constructor del componente');
-  }
+export class Proyectos {
+ proyectos$: Observable<Proyec[]>;
 
-  ngOnInit(): void {
-    console.log('ngOnInit Ejecutando');
-    this.proyectosService.getProyectos().subscribe((data: any) =>{
-      console.log('Datos desde API', data);
-      this.proyectos = data;
-    });
-  }
+ constructor(private proyectService: ProyectosService){
+  this.proyectos$ = this.proyectService.getProyectos();
+ }
 }

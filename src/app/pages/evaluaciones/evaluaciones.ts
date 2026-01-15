@@ -1,6 +1,8 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { EvaluacionesService } from '../../services/evaluaciones';
+import { Observable } from 'rxjs';
+import { Evalua } from './evalua';
 
 @Component({
   selector: 'app-evaluaciones',
@@ -9,18 +11,10 @@ import { EvaluacionesService } from '../../services/evaluaciones';
   templateUrl: './evaluaciones.html',
   styleUrl: './evaluaciones.css',
 })
-export class Evaluaciones implements OnInit {
-  evaluaciones: any[] = [];
+export class Evaluaciones{
+  evaluaciones$: Observable<Evalua[]>;
 
-  constructor(private evaluacionesService: EvaluacionesService){
-    console.log('Constructor del Componente');
-  }
-
-  ngOnInit(): void {
-    console.log('ngOnInit Ejecutando');
-    this.evaluacionesService.getEvaluaciones().subscribe((data: any) =>{
-      console.log('Datos desde API', data);
-      this.evaluaciones = data;
-    });
+  constructor(private evaluaService: EvaluacionesService){
+    this.evaluaciones$ = this.evaluaService.getEvaluaciones();
   }
 }

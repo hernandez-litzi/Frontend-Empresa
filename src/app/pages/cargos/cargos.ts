@@ -1,6 +1,8 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { CargosService } from '../../services/cargos';
+import { Observable } from 'rxjs';
+import { Cargo } from './cargo';
 
 @Component({
   selector: 'app-cargos',
@@ -9,19 +11,11 @@ import { CargosService } from '../../services/cargos';
   templateUrl: './cargos.html',
   styleUrl: './cargos.css',
 })
-export class Cargos implements OnInit{
-  cargos: any[] = [];
-  constructor(private cargosService: CargosService){
-    console.log('Constructor del componente');
+export class Cargos{
+  cargos$: Observable<Cargo[]>;
+
+  constructor(private cargoService: CargosService){
+    this.cargos$ = this.cargoService.getCargos();
   }
-
-  ngOnInit(): void {
-    console.log('ngOnInit Ejecutado');
-
-  this.cargosService.getCargos().subscribe((data: any) => {
-    console.log('DATA COMPLETA:', data);
-    this.cargos = data;
-});
-
-  }
+  
 }
