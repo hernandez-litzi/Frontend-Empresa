@@ -11,4 +11,5 @@ import { RouterLink } from '@angular/router';
 export class Button {
   @Input() texto= '';
   @Input() ruta='';
+  @Input () variant: "" | undefined;
 }

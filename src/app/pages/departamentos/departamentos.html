@@ -1,7 +1,45 @@
-<h2>Departamentos</h2>
-<ul>
-<li *ngFor="let d of departamentos$ | async">
-  {{d.nombre}} 
-  {{d.descripcion}}
-</li>
-<ul>
+<body class="bg-gray-100">
+  <div class="min-h-screen flex flex-col">
+    <header class="h-19 bg-purple-400 text-white text-center p-4">
+      <h1 class="text-4xl font-bold">Departamentos</h1>
+    </header>
+    <div class="flex flex-1">
+      <aside class="w-64 bg-purple-400 text-white"> 
+
+      </aside>
+      
+      <main class="flex-1 p-20">
+        <table class="border border-violet-400">
+          <thead>
+            <tr>
+              <th class="border border-violet-300 px-4 py-2">ID</th>
+              <th class="border border-violet-300 px-4 py-2">Nombre</th>
+              <th class="border border-violet-300 px-4 py-2">Descripción</th>
+              <th class="border border-violet-300 px-4 py-2 text-center">Acciones</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <tr *ngFor="let d of departamentos$ | async">
+              <td class="border border-violet-300 px-4 py-2">{{ d.id }}</td>
+              <td class="border border-violet-300 px-4 py-2">{{ d.nombre }}</td>
+              <td class="border border-violet-300 px-4 py-2">{{ d.descripcion }}</td>
+              <td class="border border-violet-300 px-4 py-2">
+                <div class="flex justify-center gap-2">
+                  <button class="shadow hover:bg-yellow-500 px-3 py-1 rounded-md text-sm">
+                    Editar
+                  </button>
+                  <button class="shadow hover:bg-red-500 px-3 py-1 rounded-md text-sm">
+                    Eliminar 
+                  </button>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </main>
+    </div>
+    
+  </div>
+  
+</body>
