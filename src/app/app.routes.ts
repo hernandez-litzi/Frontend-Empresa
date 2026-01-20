@@ -5,6 +5,7 @@ import { Evaluaciones } from './pages/evaluaciones/evaluaciones';
 import { Proyectos } from './pages/proyectos/proyectos';
 import { menuComponent } from './pages/Menu/menu';
 import { Departamentos } from './pages/departamentos/departamentos';
+import { Formulario } from './pages/shared/formulario/formulario';
 
 
 export const routes: Routes = [
@@ -14,7 +15,8 @@ export const routes: Routes = [
       { path: 'cargos', component: Cargos },
       { path:'empleados', component: Empleados},
       { path:'evaluaciones', component: Evaluaciones},
-      { path:'proyectos', component: Proyectos}
+      { path:'proyectos', component: Proyectos},
+       { path:'formulario', component: Formulario}
 ];
 
 export class appRoutingModule{}

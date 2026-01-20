@@ -3,13 +3,14 @@ import { CommonModule } from '@angular/common';
 import { DepartamentosService } from '../../services/departamentos';
 import { Depto } from './depto';
 import { Observable } from 'rxjs/internal/Observable';
+import { Button } from '../shared/button/button';
 
 @Component({
   selector: 'app-departamentos',
 
   standalone: true,
 
-  imports: [CommonModule],
+  imports: [CommonModule, Button],
 
   templateUrl: './departamentos.html'
 })

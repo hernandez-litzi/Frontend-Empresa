@@ -1,13 +1,21 @@
 <button
-  [routerLink]="ruta"
-  class="flex flex-col items-center justify-center p-6 rounded-xl shadow hover:bg-gray-100 transition w-full"
+  *ngIf="texto"
+  
+  [routerLink]="ruta || null"
+  class="rounded-xl shadow transition"
+  [ngClass]="[
+    ruta
+      ? 'flex flex-col items-center justify-center p-6 w-full hover:bg-gray-100'
+      : 'px-3 py-1 text-white text-sm',
+    variant === 'Agregar' && !ruta ? 'bg-gradient-to-r from-cyan-500 to-blue-500 hover:bg-gradient-to-bl focus:ring-2  focus:outline-none focus:ring-cyan-300 dark:focus:ring-cyan-800 font-medium rounded-base absolute top-5 right-30 px-3 ' : '',
+    variant === 'Editar' && !ruta ? 'bg-gradient-to-br from-purple-600 to-blue-500 hover:bg-gradient-to-bl focus:ring-2 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-base px-3 ' : '',
+    variant === 'Eliminar' && !ruta ? 'bg-gradient-to-br from-pink-500 to-orange-400 hover:bg-gradient-to-bl focus:ring-2 focus:outline-none focus:ring-pink-200 dark:focus:ring-pink-800 font-medium rounded-base px-3 ' : '',
+    variant === 'Guardar' && !ruta ? 'py-2.5 px-6 text-sm rounded-full bg-gradient-to-r from-blue-500 to-blue-300 text-white cursor-pointer font-semibold text-center shadow-xs transition-all duration-500 hover:bg-gradient-to-l' : '',
+    variant === 'Cancelar' && !ruta ? 'py-2.5 px-6 text-sm rounded-full bg-gradient-to-r from-orange-500 to-orange-300 text-white cursor-pointer font-semibold text-center shadow-xs transition-all duration-500 hover:bg-gradient-to-l' : ''
+  ]"
 >
-  <ng-content></ng-content>
+  <ng-content *ngIf="ruta"></ng-content>
 
-  <span class="text-sm font-medium">
-    {{ texto }}
-  </span>
+  <span class="text-sm font-medium">{{ texto }}</span>
 </button>
-
-
 
