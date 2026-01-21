@@ -13,8 +13,7 @@ import { DepartamentosService } from '../../../services/departamentos';
 export class Formulario {
   formulario = {
     nombre: '',
-    descripcion: '',
-    empleado: { id: 0 }
+    descripcion: ''
   };
 
   mensaje = '';
@@ -40,8 +39,7 @@ export class Formulario {
 Cancelar(){
     this.formulario = {
     nombre: '',
-    descripcion: '',
-    empleado: { id: 0 }
+    descripcion: ''
   };
 
   this.mensaje = '';
